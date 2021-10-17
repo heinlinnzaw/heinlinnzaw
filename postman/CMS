@@ -1,0 +1,442 @@
+{
+	"info": {
+		"_postman_id": "70fe03cc-088b-4692-b66f-f069e25dc5f9",
+		"name": "CMS APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Refresh Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"heinlinn.zaw\",\r\n    \"pwd\": \"pwd12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:19305/api/account/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "19305",
+					"path": [
+						"api",
+						"account",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"heinlinn.zaw\",\r\n    \"pwd\": \"pwd12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:19305/api/account/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "19305",
+					"path": [
+						"api",
+						"account",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAll_PaymentMethods",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjI1OGJhY2IzLTJlNzMtMTFlYy1hOGJiLTAwMTU1ZDBiYWI3OCIsIlNlc3Npb24iOiI2MTgyYWNjNS1iYzcxLTRiZjYtYjVlOS1mMjM5MTkyNjU2M2EiLCJpc3MiOiJoZWlubHo4OUBnbWFpbC5jb20iLCJhdWQiOiJoZWlubHo4OUBnbWFpbC5jb20iLCJuYmYiOjE2MzQ0NDE3NTksImV4cCI6MTYzNDUyODE1OSwiaWF0IjoxNjM0NDQxNzU5fQ.8fxLhSMtp_ntvfOCXptBgwZ9d6daA04lFWh6s_Y1LUY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjI1OGJhY2IzLTJlNzMtMTFlYy1hOGJiLTAwMTU1ZDBiYWI3OCIsImlzcyI6ImhlaW5sejg5QGdtYWlsLmNvbSIsImF1ZCI6ImhlaW5sejg5QGdtYWlsLmNvbSIsIm5iZiI6MTYzNDM5NTM1NiwiZXhwIjoxNjM0NDgxNzU2LCJpYXQiOjE2MzQzOTUzNTZ9.NUt6wjUhDfnnq9B8elrVkDh9sFSRa97Z0_H5GVnsocw",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:19305/api/PaymentType/GetAll_PaymentMethods",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "19305",
+					"path": [
+						"api",
+						"PaymentType",
+						"GetAll_PaymentMethods"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateVoucher",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjI1OGJhY2IzLTJlNzMtMTFlYy1hOGJiLTAwMTU1ZDBiYWI3OCIsIlNlc3Npb24iOiI2MTgyYWNjNS1iYzcxLTRiZjYtYjVlOS1mMjM5MTkyNjU2M2EiLCJpc3MiOiJoZWlubHo4OUBnbWFpbC5jb20iLCJhdWQiOiJoZWlubHo4OUBnbWFpbC5jb20iLCJuYmYiOjE2MzQ0NDE3NTksImV4cCI6MTYzNDUyODE1OSwiaWF0IjoxNjM0NDQxNzU5fQ.8fxLhSMtp_ntvfOCXptBgwZ9d6daA04lFWh6s_Y1LUY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjI1OGJhY2IzLTJlNzMtMTFlYy1hOGJiLTAwMTU1ZDBiYWI3OCIsImlzcyI6ImhlaW5sejg5QGdtYWlsLmNvbSIsImF1ZCI6ImhlaW5sejg5QGdtYWlsLmNvbSIsIm5iZiI6MTYzNDM5NTM1NiwiZXhwIjoxNjM0NDgxNzU2LCJpYXQiOjE2MzQzOTUzNTZ9.NUt6wjUhDfnnq9B8elrVkDh9sFSRa97Z0_H5GVnsocw",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "gift card 10",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "apple gift card",
+							"type": "text"
+						},
+						{
+							"key": "expiry_date",
+							"value": "2021-12-31",
+							"type": "text"
+						},
+						{
+							"key": "uploadimage",
+							"type": "file",
+							"src": "/C:/Users/heinlz/Downloads/giftcard_02.png"
+						},
+						{
+							"key": "amount",
+							"value": "10",
+							"type": "text"
+						},
+						{
+							"key": "qty",
+							"value": "50",
+							"type": "text"
+						},
+						{
+							"key": "is_active",
+							"value": "true",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:19305/api/evoucher/createvoucher",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "19305",
+					"path": [
+						"api",
+						"evoucher",
+						"createvoucher"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateVoucher",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjI1OGJhY2IzLTJlNzMtMTFlYy1hOGJiLTAwMTU1ZDBiYWI3OCIsIlNlc3Npb24iOiI2MTgyYWNjNS1iYzcxLTRiZjYtYjVlOS1mMjM5MTkyNjU2M2EiLCJpc3MiOiJoZWlubHo4OUBnbWFpbC5jb20iLCJhdWQiOiJoZWlubHo4OUBnbWFpbC5jb20iLCJuYmYiOjE2MzQ0NDE3NTksImV4cCI6MTYzNDUyODE1OSwiaWF0IjoxNjM0NDQxNzU5fQ.8fxLhSMtp_ntvfOCXptBgwZ9d6daA04lFWh6s_Y1LUY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjI1OGJhY2IzLTJlNzMtMTFlYy1hOGJiLTAwMTU1ZDBiYWI3OCIsImlzcyI6ImhlaW5sejg5QGdtYWlsLmNvbSIsImF1ZCI6ImhlaW5sejg5QGdtYWlsLmNvbSIsIm5iZiI6MTYzNDM5NTM1NiwiZXhwIjoxNjM0NDgxNzU2LCJpYXQiOjE2MzQzOTUzNTZ9.NUt6wjUhDfnnq9B8elrVkDh9sFSRa97Z0_H5GVnsocw",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "gift card 10",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "apple gift card",
+							"type": "text"
+						},
+						{
+							"key": "expiry_date",
+							"value": "2021-12-31",
+							"type": "text"
+						},
+						{
+							"key": "uploadimage",
+							"type": "file",
+							"src": "/C:/Users/heinlz/Downloads/giftcard_02.png"
+						},
+						{
+							"key": "amount",
+							"value": "10",
+							"type": "text"
+						},
+						{
+							"key": "qty",
+							"value": "21",
+							"type": "text"
+						},
+						{
+							"key": "is_active",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "ev_id",
+							"value": "f6a39094-51f2-48a2-8a33-d11e73e023af",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:19305/api/evoucher/updatevoucher",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "19305",
+					"path": [
+						"api",
+						"evoucher",
+						"updatevoucher"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "checkout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjI1OGJhY2IzLTJlNzMtMTFlYy1hOGJiLTAwMTU1ZDBiYWI3OCIsIlNlc3Npb24iOiI2MTgyYWNjNS1iYzcxLTRiZjYtYjVlOS1mMjM5MTkyNjU2M2EiLCJpc3MiOiJoZWlubHo4OUBnbWFpbC5jb20iLCJhdWQiOiJoZWlubHo4OUBnbWFpbC5jb20iLCJuYmYiOjE2MzQ0NDE3NTksImV4cCI6MTYzNDUyODE1OSwiaWF0IjoxNjM0NDQxNzU5fQ.8fxLhSMtp_ntvfOCXptBgwZ9d6daA04lFWh6s_Y1LUY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customer_id\": \"258bacb3-2e73-11ec-a8bb-00155d0bab78\",\r\n    \"buy_type_id\": \"81d1c331-2e5e-11ec-a8bb-00155d0bab78\",\r\n    \"ev_id\":\"f6a39094-51f2-48a2-8a33-d11e73e023af\",\r\n    \"customername\": \"heinlinzaw\",\r\n    \"phoneno\": \"09450026141\",\r\n    \"payment_type_id\": \"1914e9c0-2e5f-11ec-a8bb-00155d0bab78\",\r\n    \"qty\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:19305/api/purchase/checkout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "19305",
+					"path": [
+						"api",
+						"purchase",
+						"checkout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetQR",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjI1OGJhY2IzLTJlNzMtMTFlYy1hOGJiLTAwMTU1ZDBiYWI3OCIsIlNlc3Npb24iOiI2MTgyYWNjNS1iYzcxLTRiZjYtYjVlOS1mMjM5MTkyNjU2M2EiLCJpc3MiOiJoZWlubHo4OUBnbWFpbC5jb20iLCJhdWQiOiJoZWlubHo4OUBnbWFpbC5jb20iLCJuYmYiOjE2MzQ0NDE3NTksImV4cCI6MTYzNDUyODE1OSwiaWF0IjoxNjM0NDQxNzU5fQ.8fxLhSMtp_ntvfOCXptBgwZ9d6daA04lFWh6s_Y1LUY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:19305/api/purchase/GetQR/06345fea-a53c-4a09-8547-f03a70ef7fb8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "19305",
+					"path": [
+						"api",
+						"purchase",
+						"GetQR",
+						"06345fea-a53c-4a09-8547-f03a70ef7fb8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "VerifyPromoCode",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "GetPurchaseByStatus",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjI1OGJhY2IzLTJlNzMtMTFlYy1hOGJiLTAwMTU1ZDBiYWI3OCIsIlNlc3Npb24iOiI1YWI4NDQ2OS0xMjY4LTQ0MmUtOTJjMi03N2NlNGEwMTExNjciLCJpc3MiOiJoZWlubHo4OUBnbWFpbC5jb20iLCJhdWQiOiJoZWlubHo4OUBnbWFpbC5jb20iLCJuYmYiOjE2MzQ0ODEzMDksImV4cCI6MTYzNDU2NzcwOSwiaWF0IjoxNjM0NDgxMzA5fQ._4fd1yMtw81Xt9Y8MUBHx14J3Gkev2aeM2SyOEXLN-I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:19305/api/purchase/GetPurchaseByStatus?is_verify=true",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "19305",
+					"path": [
+						"api",
+						"purchase",
+						"GetPurchaseByStatus"
+					],
+					"query": [
+						{
+							"key": "is_verify",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllVoucher",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllVoucherByID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjI1OGJhY2IzLTJlNzMtMTFlYy1hOGJiLTAwMTU1ZDBiYWI3OCIsIlNlc3Npb24iOiI1YWI4NDQ2OS0xMjY4LTQ0MmUtOTJjMi03N2NlNGEwMTExNjciLCJpc3MiOiJoZWlubHo4OUBnbWFpbC5jb20iLCJhdWQiOiJoZWlubHo4OUBnbWFpbC5jb20iLCJuYmYiOjE2MzQ0ODEzMDksImV4cCI6MTYzNDU2NzcwOSwiaWF0IjoxNjM0NDgxMzA5fQ._4fd1yMtw81Xt9Y8MUBHx14J3Gkev2aeM2SyOEXLN-I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:19305/api/evoucher/GetAllVoucher?id=293fc9fd-aca1-4943-bf20-341941ce5dd8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "19305",
+					"path": [
+						"api",
+						"evoucher",
+						"GetAllVoucher"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "293fc9fd-aca1-4943-bf20-341941ce5dd8"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
