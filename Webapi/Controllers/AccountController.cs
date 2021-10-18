@@ -36,10 +36,10 @@ namespace Webapi.Controllers
             if (cust != null)
             {  
              
-                resp.refresh_token = JWTGenerator.RotateString(50);
+                resp.refresh_token = JWTGenerator.RandomString(50);
                 while (_tokenRepository.QueryByrefreshId(resp.refresh_token) != null)
                 {
-                    resp.refresh_token = JWTGenerator.RotateString(50);
+                    resp.refresh_token = JWTGenerator.RandomString(50);
                 }
 
                 resp.access_token = JWTGenerator.GenerateJwtToken(cust.Id,
@@ -78,10 +78,10 @@ namespace Webapi.Controllers
             {
                 if(tEntity.Expires > DateTime.Now)
                 {
-                    resp.refresh_token = JWTGenerator.RotateString(50);
+                    resp.refresh_token = JWTGenerator.RandomString(50);
                     while (_tokenRepository.QueryByrefreshId(resp.refresh_token) != null)
                     {
-                        resp.refresh_token = JWTGenerator.RotateString(50);
+                        resp.refresh_token = JWTGenerator.RandomString(50);
                     }
                     
                     resp.access_token = JWTGenerator.GenerateJwtToken(model.id, tEntity.Token_Id,

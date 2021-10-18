@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Interview\\heinlinzaw\\Webapi\\Webapi.csproj": {}
+    "E:\\Interview\\heinlinzaw\\heinlinnzaw\\Webapi\\Webapi.csproj": {}
   },
   "projects": {
-    "E:\\Interview\\heinlinzaw\\Webapi\\Webapi.csproj": {
+    "E:\\Interview\\heinlinzaw\\heinlinnzaw\\Webapi\\Webapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Interview\\heinlinzaw\\Webapi\\Webapi.csproj",
+        "projectUniqueName": "E:\\Interview\\heinlinzaw\\heinlinnzaw\\Webapi\\Webapi.csproj",
         "projectName": "Webapi",
-        "projectPath": "E:\\Interview\\heinlinzaw\\Webapi\\Webapi.csproj",
+        "projectPath": "E:\\Interview\\heinlinzaw\\heinlinnzaw\\Webapi\\Webapi.csproj",
         "packagesPath": "C:\\Users\\heinlz\\.nuget\\packages\\",
-        "outputPath": "E:\\Interview\\heinlinzaw\\Webapi\\obj\\",
+        "outputPath": "E:\\Interview\\heinlinzaw\\heinlinnzaw\\Webapi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

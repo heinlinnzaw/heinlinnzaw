@@ -38,7 +38,7 @@ namespace Webapi.Helpers
             return jwtToken;
         }
 
-        public static string RotateString(int length, string chars = null)
+        public static string RandomString(int length, string chars = null)
         {
             var random = new Random();
             if (string.IsNullOrEmpty(chars))
@@ -47,7 +47,7 @@ namespace Webapi.Helpers
             return new string(Enumerable.Repeat(chars, length)
             .Select(s => s[random.Next(s.Length)]).ToArray());
         }
-
+        /*
         private static readonly Random _random = new Random();
         public static int RandomNumber(int min, int max)
         {
@@ -67,13 +67,15 @@ namespace Webapi.Helpers
             }
 
             return lowerCase ? builder.ToString().ToLower() : builder.ToString();
-        }
+        }*/
         public static string RandomPromoCode()
         {
             var promoBuilder = new StringBuilder();
-            promoBuilder.Append(RandomString(2, true));
-            promoBuilder.Append(RandomNumber(100000, 999999));
-            promoBuilder.Append(RandomString(3, false));
+            promoBuilder.Append(RandomString(2, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"));
+            promoBuilder.Append(RandomString(3, "0123456789"));
+            promoBuilder.Append(RandomString(2, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"));
+            promoBuilder.Append(RandomString(2, "0123456789"));
+            promoBuilder.Append(RandomString(2, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"));
             return promoBuilder.ToString();
         }
     }

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -30,19 +31,26 @@ namespace Webapi
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
+        {            
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-            string connStr = Configuration.GetConnectionString("DefaultConnection");            
-            
+            string connStr = Configuration.GetConnectionString("DefaultConnection");                        
             services.AddDbContext<ApplicationDBContext>(option => option.UseMySql(connStr, ServerVersion.AutoDetect(connStr)));
-                       
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(x =>
+            {
+                x.TokenValidationParameters = new TokenValidationParameters();
+            });
             services.AddControllers();
             services.AddTransient<ITokenRepository, TokenRepository>();
             services.AddTransient<ICustomerRepository, CustomerRepository>();
-            services.AddTransient<IPaymentMethodRepository, PaymentMethodRepository>();
-            services.AddTransient<IBuyTypeRepository, BuyTypeRepository>();
-            services.AddTransient<IeVoucherRepository, eVoucherRepository>();
-            services.AddTransient<IPurchaseRepository, PurchaseRepository>();
+            services.AddScoped<IPaymentMethodRepository, PaymentMethodRepository>();
+            services.AddScoped<IBuyTypeRepository, BuyTypeRepository>();
+            services.AddScoped<IeVoucherRepository, eVoucherRepository>();
+            services.AddScoped<IPurchaseRepository, PurchaseRepository>();
         }
 
        
@@ -55,7 +63,7 @@ namespace Webapi
             }
 
             app.UseRouting();
-                      
+            app.UseAuthentication();
             app.UseAuthorization();
             app.UseMiddleware<JWTMiddleware>();
             app.UseEndpoints(endpoints =>

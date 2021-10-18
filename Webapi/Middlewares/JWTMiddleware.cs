@@ -41,9 +41,10 @@ namespace Webapi.Middlewares
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(key),
                     ValidateIssuer = true,
-                    ValidateAudience = true,
+                    ValidateAudience = true,                    
                     ValidIssuer = _config.GetValue<string>("JWTConfig:issuer"),
-                    ValidAudience = _config.GetValue<string>("JWTConfig:audienceid")
+                    ValidAudience = _config.GetValue<string>("JWTConfig:audienceid"),
+                    ClockSkew = TimeSpan.Zero
                 }, out SecurityToken validatedToken);
 
                 var jwtToken = (JwtSecurityToken)validatedToken;
